@@ -69,6 +69,43 @@ public class TestPerson {
     }
 
     @Test
+    public void testConstructorWithHeightAndWeight() {
+        // Given
+        Integer expectedHeight = 65;
+        Integer expectedWeight = 150;
+
+        // When
+        Person person = new Person(expectedHeight, expectedWeight);
+
+        // Then
+        Integer actualHeight = person.getHeight();
+        Integer actualWeight = person.getWeight();
+
+        Assert.assertEquals(expectedHeight, actualHeight);
+        Assert.assertEquals(expectedWeight, actualWeight);
+    }
+
+    @Test
+    public void testConstructorWithBirthMonthFavColorAndFavDrink() {
+        // Given
+        String expectedBirthMonth = "July";
+        String expectedFavColor = "Black";
+        String expectedFavDrink = "Water";
+
+        // When
+        Person person = new Person(expectedBirthMonth, expectedFavColor, expectedFavDrink);
+
+        // Then
+        String actualBirthMonth = person.getBirthMonth();
+        String actualFavColor = person.getFavColor();
+        String actualFavDrink = person.getFavDrink();
+
+        Assert.assertEquals(expectedBirthMonth, actualBirthMonth);
+        Assert.assertEquals(expectedFavColor, actualFavColor);
+        Assert.assertEquals(expectedFavDrink, actualFavDrink);
+    }
+
+    @Test
     public void testSetName() {
         // Given
         Person person = new Person();
